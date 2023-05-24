@@ -229,13 +229,13 @@ public struct ConfigOptions: ParsableConfiguration {
     public var commentsEnabled: Bool {
         !commentOptions.isEmpty
     }
-    
+
     public struct DataTypes: Codable {
         public var string: [String: String]?
         public var number: [String: String]?
         public var integer: [String: String]?
     }
-    
+
     /// Change the data type format mapping to Swift types than what CreateAPI provides.
     ///
     /// You can use this option in combination with [`entities.imports`](#entitiesimports), [`paths.imports`](#pathsimports), and [`package.dependencies`](#packagedependencies) for mapping to types that the default library does not provide.
@@ -273,14 +273,14 @@ public struct ConfigOptions: ParsableConfiguration {
     ///
     /// </details>
     @Option public var dataTypes = DataTypes()
-    
+
     @Option public var package: Package
-    
+
     // sourcery: document,
     /// Options specifically related generated a Swift Package.
     public struct Package: ParsableConfiguration {
         public init() { }
-        
+
         /// Additional remote Swift Package imports.
         ///
         /// <details>
@@ -721,7 +721,7 @@ public struct ConfigOptions: ParsableConfiguration {
         @Option public var collectionElements: [String: String] = [:]
 
         /// Whether the renames should be sanitized when processed, removing reserved keywords and such
-        @Option public var sanitizeRenames: Bool = true
+        @Option public var sanitizeRenames: Bool = false
     }
 }
 

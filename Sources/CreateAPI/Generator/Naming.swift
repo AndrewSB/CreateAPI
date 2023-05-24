@@ -10,7 +10,7 @@ protocol DeclarationName: CustomStringConvertible {}
 struct TypeName: CustomStringConvertible, Hashable, DeclarationName {
     let rawValue: String
 
-    init(processing rawValue: String, wasRename: Bool = false, options: GenerateOptions) {
+    init(processing rawValue: String, wasRename: Bool, options: GenerateOptions) {
         self.rawValue = rawValue.process(isProperty: false, wasRename: wasRename, options: options)
     }
 

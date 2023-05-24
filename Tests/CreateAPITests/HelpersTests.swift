@@ -48,7 +48,7 @@ final class HelpersTests: XCTestCase {
             var configOptions = ConfigOptions.default
             configOptions.acronyms.append("nft")
             let options = GenerateOptions(configOptions: configOptions)
-            XCTAssertEqual(TypeName(processing: "myNft", options: options).rawValue, "MyNFT")
+            XCTAssertEqual(TypeName(processing: "myNft", wasRename: false, options: options).rawValue, "MyNFT")
         }
         
         // Keywords

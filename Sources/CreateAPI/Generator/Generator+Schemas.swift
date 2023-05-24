@@ -332,7 +332,7 @@ extension Generator {
 
     private func makeNestedElementTypeName(for key: String, context: Context) -> TypeName {
         if let name = options.rename.collectionElements[key] {
-            return TypeName(name)
+            return TypeName(processing: name, wasRename: true, options: self.options)
         }
         let name = makeTypeName(key)
         // Some know words that the library doesn't handle well

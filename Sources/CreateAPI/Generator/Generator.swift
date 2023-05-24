@@ -37,7 +37,7 @@ final class Generator {
     }
 
     func makeTypeName(_ rawValue: String) -> TypeName {
-        TypeName(processing: rawValue, options: options)
+        TypeName(processing: rawValue, wasRename: false, options: options)
     }
 
     func makeHeader(imports: Set<String>) -> String {

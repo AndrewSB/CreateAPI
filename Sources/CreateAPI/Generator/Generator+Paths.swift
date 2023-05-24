@@ -339,7 +339,7 @@ extension Generator {
         func makeNestedTypeName(_ appending: String) -> TypeName {
             switch options.paths.style {
             case .operations:
-                return TypeName(processing: operationId, options: options).appending(appending)
+                return TypeName(processing: operationId, wasRename: true, options: options).appending(appending)
             case .rest:
                 return TypeName("\(method.capitalizingFirstLetter())\(appending)")
             }
@@ -586,7 +586,7 @@ extension Generator {
             return name
         }
 
-        let name = getPropertyName(for: makePropertyName(parameter.name, wasRename: false), type: type.type)
+        let name = getPropertyName(for: makePropertyName(parameter.name, wasRename: true), type: type.type)
         return Property(name: name, type: type.type, isOptional: !parameter.required, key: parameter.name, explode: schemaContext.explode, style: schemaContext.style, metadata: .init(schema.coreContext), nested: type.nested)
     }
 
