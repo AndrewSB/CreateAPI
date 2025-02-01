@@ -17,7 +17,7 @@ extension Generator {
         let comments = templates.comments(for: decl.metadata, name: decl.name.rawValue)
 
         let content: String
-        if false { // TODO: Switch on the format/style 
+        if true { // TODO: Switch on the format/style 
             let constants = decl.cases.map({ templates.rawRepresentableConstant(name: $0.name, value: $0.key) }).joined(separator: "\n")
             content = templates.rawRepresentable(name: decl.name, contents: constants)
         } else {
