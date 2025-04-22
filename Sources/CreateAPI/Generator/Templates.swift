@@ -109,7 +109,7 @@ final class Templates {
 
     func rawRepresentable(name: TypeName, type: String = "String", contents: String) -> String {
         return """
-        \(access)struct \(name): RawRepresentable, Codable {
+        \(access)struct \(name): RawRepresentable, Codable, Equatable {
             \(access)let rawValue: \(type)
 
             \(access)init(rawValue: \(type)) {
